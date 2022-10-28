@@ -43,7 +43,7 @@ module.exports = {
     devtool: isDev ? 'source-map' : false,
     devServer: {
         port: 8000,
-        hot: isDev
+        hot: false
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -76,6 +76,13 @@ module.exports = {
             {
                 test: /\.ico$/,
                 type: 'asset/resource'
+            },
+            {
+                test: /\.(woff|woff2|ttf)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/fonts/[name][ext]'
+                }
             },
         ]
     }

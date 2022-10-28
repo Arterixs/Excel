@@ -1,3 +1,23 @@
+@import "~normalize.css";
+@import "variables.scss";
+@import "_mixins.scss";
+@import "fonts.scss";
+@import "header.scss";
+@import "toolbar.scss";
+@import "formula.scss";
+@import "table.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: red;
+    font-family: 'Robot-reg', sans-serif;
+    font-size: 12px;
+}
+
+.excel {
+    position: relative;
 }
