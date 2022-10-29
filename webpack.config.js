@@ -6,22 +6,9 @@ const ESLintPlugin = require('eslint-webpack-plugin')
 const isProd = process.env.NODE_ENV === 'production'
 const isDev = !isProd
 
-
 const filename = ext => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`
 
 const esLintPlugin = isDev => isDev ? [] : [new ESLintPlugin({ extensions: 'js' })]
-
-const jsLoaders = () => {
-    const loaders = [
-        {
-            loader: "babel-loader",
-            options: {
-                presets: ['@babel/preset-env']
-            }
-        }
-    ]
-    return loaders
-}
 
 module.exports = {
     context: path.resolve(__dirname, "src"),
@@ -71,7 +58,12 @@ module.exports = {
             {
                 test: /\.m?js$/,
                 exclude: /node_modules/,
-                use: jsLoaders()
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             },
             {
                 test: /\.ico$/,
