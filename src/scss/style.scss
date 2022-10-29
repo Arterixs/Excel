@@ -1,6 +1,6 @@
 @import "~normalize.css";
 @import "variables.scss";
-@import "_mixins.scss";
+@import "mixins.scss";
 @import "fonts.scss";
 @import "header.scss";
 @import "toolbar.scss";
@@ -21,4 +21,7 @@ body {
 .excel {
     position: relative;
     color: #888;
+    height: 100%;
+    max-width: 100%;
+    font-size: .8rem;
 }
