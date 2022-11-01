@@ -10,7 +10,12 @@
     },
     "rules": {
         "semi": "off",
-        "linebreak-style": "off"
+        "linebreak-style": "off",
+        "require-jsdoc": "off",
+        "indent": "off",
+        "arrow-parens": "off",
+        "operator-linebreak": ["error", "before"],
+        "max-len": ["error", 120]
     },
     "extends": ["eslint:recommended", "google"]
 }
